@@ -55,17 +55,9 @@ const Tabs = () => {
             <div className="tab-content bg-base-100 border-base-300 p-6">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {activeTab === tab &&
-                  results?.map((item, idx) => (
-                    <div key={idx} className="card bg-base-100 shadow-xl overflow-hidden">
-                      <figure>
-                        <img
-                          src={item.urls?.small || item.images?.fixed_height.url}
-                          alt={tab}
-                          className="w-full h-48 object-cover"
-                        />
-                      </figure>
-                    </div>
-                  ))}
+  results?.map((item, idx) => (
+    <ResultCard key={item.id || idx} item={item} tab={tab} />
+  ))}
               </div>
             </div>
           </React.Fragment>

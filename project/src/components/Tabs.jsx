@@ -50,14 +50,14 @@ const Tabs = () => {
               checked={activeTab === tab}
               onChange={() => dispatch(setActiveTab(tab))}
             />
-            
+
             {/* ট্যাবের কন্টেন্ট এরিয়া */}
             <div className="tab-content bg-base-100 border-base-300 p-6">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {activeTab === tab &&
-  results?.map((item, idx) => (
-    <ResultCard key={item.id || idx} item={item} tab={tab} />
-  ))}
+                  results?.map((item, idx) => (
+                    <ResultCard key={item.id || idx} item={item} tab={tab} />
+                  ))}
               </div>
             </div>
           </React.Fragment>
